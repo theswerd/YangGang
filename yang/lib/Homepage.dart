@@ -161,6 +161,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                   Random random = new Random(DateTime.now().microsecondsSinceEpoch);
                   int index = random.nextInt(shareStrings.length-1);
                   Share.share(shareStrings[index]+ourWebsite);
+                }else if(v == "info"){
+                  showAboutDialog(
+                    context: context,
+                    applicationName: "#YANGGANG",
+                    applicationVersion: '1.0.0',
+                    applicationLegalese: "#YANGGANG is not affiliated with The Andrew Yang Campaign. It is developed by high school students Benjamin Swerdlow and Jason Telanoff, all ad profits go to them."
+                  );
                 }
 
               },
@@ -177,6 +184,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                 ),
                 PopupMenuItem(
                   child: Text("Extra Info"),
+                  value: "info",
                 )
               ],
             )
