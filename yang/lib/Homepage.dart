@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter_audio_player/flutter_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
+import 'package:share/share.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -10,6 +13,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
+  String ourWebsite = "TODO:GETWEBSITE";
+  List shareStrings = [
+    "Are you a fan of the #YANGGANG, then checkout #YANGGANG -- ",
+    "Bro do you like Andrew Yang and making sounds, then you'll love #YANGGANG -- ",
+    "Bro do you like making sounds and Andrew Yang, then you'll love #YANGGANG -- ",
+    "Did you know Andrew Yang was born in 1975 -- #YANGGANG -- ",
+    "Andrew Yang's Birthday is January 13 -- #YANGGANG -- ",
+    "USA -- #YANGGANG -- ",
+    "The Obama Administration named Andrew Yang “Champion of Change” -- #YANGGANG -- ",
+    "Bro Andrew Yang is a democrat -- #YANGGANG -- ",
+    "Did you know Andrew Yang is not a republican -- #YANGGANG -- ",
+    "Andrew Yang was born in New York -- #YANGGANG -- ",
+    "Andrew Yang is not six feet tall -- #YANGGANG -- ",
+    "Andrew Yang went to Brown Univesty and Columbia Law School -- #YANGGANG -- ",
+    "Andrew Yang's favorite actress is Emma Watson -- #YANGGANG -- ",
+    "Andrew Yang's favorite actress is Emma Watson -- #YANGGANG -- ",
+    "Andrew Yang Supports Medicare For All -- #YANGGANG -- "
+
+  ];
 
   List<SoundButtonData> allSounds = [
     SoundButtonData("4th industrial revolution", '4thIndustrialRevolution.mp3'),
@@ -134,6 +156,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
           actions: <Widget>[
             PopupMenuButton(
               icon: Icon(Mdi.menu),
+              onSelected: (v){
+                if(v == "share"){
+                  Random random = new Random(DateTime.now().microsecondsSinceEpoch);
+                  int index = random.nextInt(shareStrings.length-1);
+                  Share.share(shareStrings[index]+ourWebsite);
+                }
+
+              },
               itemBuilder: (i)=>[
                 PopupMenuItem(
                   child: Text("Get rid of ads"),
@@ -143,6 +173,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                 ),
                 PopupMenuItem(
                   child: Text("Share"),
+                  value: "share",
                 ),
                 PopupMenuItem(
                   child: Text("Extra Info"),
