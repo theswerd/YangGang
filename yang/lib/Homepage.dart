@@ -16,6 +16,13 @@ class _HomePageState extends State<HomePage> {
     SoundButtonData("Data is the new oil", "DataIsTheNewOil.mp3"),
     SoundButtonData("DOJ", "DepartmentOfJustice.mp3"),
     SoundButtonData("Education", "Education.mp3"),
+    SoundButtonData("Boba", "AlmondMilkTeaWithBoba.mp3"),
+    SoundButtonData("Delicious Tofu", "DeliciousLookingTofu.mp3"),
+    SoundButtonData("7-Eleven", "GoInto7-11.mp3"),
+    SoundButtonData("Stick Myself", "GonnaStickMyselfOneOfThese.mp3"),
+    SoundButtonData("Really?", "OhReally,That'sNice.mp3"),
+    SoundButtonData("That's For Me", "That'sForMe.mp3"),
+    SoundButtonData("F*ucked", "YouAreGettingF-cked.mp3"),
   ];
   MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
       keywords: <String>['andrew yang', 'yang', 'democract', 'millenial'],
