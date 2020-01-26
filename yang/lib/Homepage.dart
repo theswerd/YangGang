@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
 
-  List<SoundButtonData> sounds = [
+  List<SoundButtonData> allSounds = [
     SoundButtonData("4th industrial revolution", '4thIndustrialRevolution.mp3'),
     SoundButtonData("Paths forward", "CreatePathsForward.mp3"),
     SoundButtonData("Data is the new oil", "DataIsTheNewOil.mp3"),
@@ -42,6 +42,57 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
     SoundButtonData("Friends and allies", "FriendsAndAlliesWithUsInTheMission.mp3"),
     SoundButtonData("Solve those problems", "SolveThoseProblems.mp3"),
     SoundButtonData("War with Iran", "WarWithIran.mp3")
+  ];
+  List<SoundButtonData> randomSounds = [
+    SoundButtonData("4th industrial revolution", '4thIndustrialRevolution.mp3'),
+    SoundButtonData("Paths forward", "CreatePathsForward.mp3"),
+    SoundButtonData("DOJ", "DepartmentOfJustice.mp3"),
+    SoundButtonData("Boba", "AlmondMilkTeaWithBoba.mp3"),
+    SoundButtonData("Delicious Tofu", "DeliciousLookingTofu.mp3"),
+    SoundButtonData("7-Eleven", "GoInto7-11.mp3"),
+    SoundButtonData("Stick Myself", "GonnaStickMyselfOneOfThese.mp3"),
+    SoundButtonData("Really?", "OhReally,That'sNice.mp3"),
+    SoundButtonData("That's For Me", "That'sForMe.mp3"),
+    SoundButtonData("F*ucked", "YouAreGettingF-cked.mp3"),
+    SoundButtonData("About me", "IFYouveHeardAnythingAboutMe.mp3"),
+    SoundButtonData("Its gonna be AI", "InAFewYearsItsGonnaBeAnAI.mp3"),
+    SoundButtonData("My wife", "MyWifeEvelyn.mp3"),
+    SoundButtonData("NATO", "Nato.mp3"),
+    SoundButtonData("Payed family leave", "PayedFamilyLeave.mp3"),
+    SoundButtonData("Things have changed", "ThingsHaveChangedFundamentally.mp3"),
+    SoundButtonData("Friends and allies", "FriendsAndAlliesWithUsInTheMission.mp3"),
+    SoundButtonData("Solve those problems", "SolveThoseProblems.mp3"),
+    SoundButtonData("War with Iran", "WarWithIran.mp3")
+  ];
+  List<SoundButtonData> positionSounds = [
+    SoundButtonData("Data is the new oil", "DataIsTheNewOil.mp3"),
+    SoundButtonData("DOJ", "DepartmentOfJustice.mp3"),
+    SoundButtonData("Education", "Education.mp3"),
+    SoundButtonData("About me", "IFYouveHeardAnythingAboutMe.mp3"),
+    SoundButtonData("Entrepreneur", "ImAnEntrupreneur.mp3"),
+    SoundButtonData("Its gonna be AI", "InAFewYearsItsGonnaBeAnAI.mp3"),
+    SoundButtonData("NATO", "Nato.mp3"),
+    SoundButtonData("Partnerships and alliances", "OuPartnershipsAndAlliances.mp3"),
+    SoundButtonData("Payed family leave", "PayedFamilyLeave.mp3"),
+    SoundButtonData("The American people", "TheAmericanPeople.mp3"),
+    SoundButtonData("Meddling in American elections", "TheDaysOfMeddlingInAmericanElectionsAreOver.mp3"),
+    SoundButtonData("The opposite of Trump", "TheOppositeOfDonaldTrump.mp3"),
+    SoundButtonData("Things have changed", "ThingsHaveChangedFundamentally.mp3"),
+    SoundButtonData("Climate change", "ClimateChange.mp3"),
+    SoundButtonData("Donald Trump", "DonaldTrump.mp3"),
+  ];
+  List<SoundButtonData> quotesSounds = [
+    SoundButtonData("Paths forward", "CreatePathsForward.mp3"),
+    SoundButtonData("Education", "Education.mp3"),
+    SoundButtonData("Greatest economic transition", "GreatestEconomicTransitionInOurCountriesHistory.mp3"),
+    SoundButtonData("About me", "IFYouveHeardAnythingAboutMe.mp3"),
+    SoundButtonData("Entrepreneur", "ImAnEntrupreneur.mp3"),
+    SoundButtonData("Its gonna be AI", "InAFewYearsItsGonnaBeAnAI.mp3"),
+    SoundButtonData("M.A.T.H", "M.A.T.H.mp3"),
+    SoundButtonData("Payed family leave", "PayedFamilyLeave.mp3"),
+    SoundButtonData("Meddling in American elections", "TheDaysOfMeddlingInAmericanElectionsAreOver.mp3"),
+    SoundButtonData("The opposite of Trump", "TheOppositeOfDonaldTrump.mp3"),
+    SoundButtonData("Things have changed", "ThingsHaveChangedFundamentally.mp3"),
   ];
   MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
     keywords: <String>['andrew yang', 'yang', 'democract', 'millenial', 'political'],
@@ -123,7 +174,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
             controller: tabController,
             children: <Widget>[
               GridView.builder(
-                itemCount: sounds.length,
+                itemCount: allSounds.length,
                 padding: EdgeInsets.all(25),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -134,10 +185,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                   
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                   elevation: 15,
-                  child: Center(child: Text(sounds[i].title, textScaleFactor: 1.5, textAlign: TextAlign.center,)),
+                  child: Center(child: Text(allSounds[i].title, textScaleFactor: 1.5, textAlign: TextAlign.center,)),
                   onPressed: (){
                     SoundPlayerUtil.addSoundName(
-                      sounds[i].soundName
+                      allSounds[i].soundName
                     );
                   },
                 ),
