@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
     SoundButtonData("Solve those problems", "SolveThoseProblems.mp3"),
     SoundButtonData("War with Iran", "WarWithIran.mp3")
   ];
-  List<SoundButtonData> positionSounds = [
+  List<SoundButtonData> positions = [
     SoundButtonData("Data is the new oil", "DataIsTheNewOil.mp3"),
     SoundButtonData("DOJ", "DepartmentOfJustice.mp3"),
     SoundButtonData("Education", "Education.mp3"),
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
     SoundButtonData("Climate change", "ClimateChange.mp3"),
     SoundButtonData("Donald Trump", "DonaldTrump.mp3"),
   ];
-  List<SoundButtonData> quotesSounds = [
+  List<SoundButtonData> quotes = [
     SoundButtonData("Paths forward", "CreatePathsForward.mp3"),
     SoundButtonData("Education", "Education.mp3"),
     SoundButtonData("Greatest economic transition", "GreatestEconomicTransitionInOurCountriesHistory.mp3"),
@@ -204,29 +204,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
           body: TabBarView(
             controller: tabController,
             children: <Widget>[
-              GridView.builder(
-                itemCount: allSounds.length,
-                padding: EdgeInsets.all(25),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 25,
-                  mainAxisSpacing: 25
-                ),
-                itemBuilder: (c,i)=>RaisedButton(
-                  
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                  elevation: 15,
-                  child: Center(child: Text(allSounds[i].title, textScaleFactor: 1.5, textAlign: TextAlign.center,)),
-                  onPressed: (){
-                    SoundPlayerUtil.addSoundName(
-                      allSounds[i].soundName
-                    );
-                  },
-                ),
-              ),
-              Container(color: Colors.blue),
-              Container(color: Colors.orange),
-              Container(color: Colors.green)
+              buildSoundGridView(allSounds),
+              buildSoundGridView(quotes),
+              buildSoundGridView(positions),
+              buildSoundGridView(randomSounds)
             ],
           ),
         ),
@@ -253,6 +234,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
         // )),
       );
     
+  }
+
+  GridView buildSoundGridView(List<SoundButtonData> list) {
+    return GridView.builder(
+              itemCount: list.length,
+              padding: EdgeInsets.all(25),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 25,
+                mainAxisSpacing: 25
+              ),
+              itemBuilder: (c,i)=>RaisedButton(
+                
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                elevation: 15,
+                child: Center(child: Text(list[i].title, textScaleFactor: 1.5, textAlign: TextAlign.center,)),
+                onPressed: (){
+                  SoundPlayerUtil.addSoundName(
+                    list[i].soundName
+                  );
+                },
+              ),
+            );
   }
 }
 
