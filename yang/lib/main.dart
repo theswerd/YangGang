@@ -1,3 +1,4 @@
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:yang/Homepage.dart';
 
@@ -7,6 +8,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-9205671327772145~3315187963");
+    
+
     return MaterialApp(
       title: '#YANGGANG',
       theme: ThemeData(
@@ -15,7 +19,9 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
         primaryColor: Colors.grey[800],
-        brightness: Brightness.dark
+        buttonColor: Colors.grey[800],
+        brightness: Brightness.dark,
+        
       ),
       home: HomePage(),
     );
