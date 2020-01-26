@@ -15,8 +15,15 @@ class MyApp extends StatelessWidget {
       title: '#YANGGANG',
       theme: ThemeData(
         primaryColor: Colors.indigoAccent[700],
-        brightness: Brightness.light
+        brightness: Brightness.light,
+        tabBarTheme: TabBarTheme(
+          labelColor: Colors.black,
+          unselectedLabelColor: Colors.grey[800],
+          indicatorSize: TabBarIndicatorSize.label
+        ),
+        indicatorColor: Colors.indigoAccent[700]
       ),
+
       darkTheme: ThemeData(
         primaryColor: Colors.grey[800],
         buttonColor: Colors.grey[800],
