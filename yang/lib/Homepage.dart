@@ -150,7 +150,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
         appBar: AppBar(
           title: Text('#YANGGANG'),
           actions: <Widget>[
@@ -201,13 +201,31 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
               ),
             ],
           ),
-          body: TabBarView(
-            controller: tabController,
+          body: Stack(
             children: <Widget>[
-              buildSoundGridView(allSounds),
-              buildSoundGridView(quotes),
-              buildSoundGridView(positions),
-              buildSoundGridView(randomSounds)
+              TabBarView(
+                controller: tabController,
+                children: <Widget>[
+                  buildSoundGridView(allSounds),
+                  buildSoundGridView(quotes),
+                  buildSoundGridView(positions),
+                  buildSoundGridView(randomSounds)
+                ],
+              ),
+              Positioned(
+                bottom: 95,
+                right: 20,
+                child: FloatingActionButton.extended(
+                  backgroundColor: Colors.redAccent[400],
+                  label: Text("Play random"),
+                  icon: Icon(Mdi.play),
+                  onPressed: (){
+                    Random random = new Random(DateTime.now().microsecond);
+                    int newRandom = random.nextInt(allSounds.length-1);
+                    SoundPlayerUtil.addSoundName(allSounds[newRandom].soundName);
+                  },
+                ),
+              )
             ],
           ),
         ),
