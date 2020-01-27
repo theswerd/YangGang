@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "111835722541",
+    "firebase_url": "https://yanggang-4811c.firebaseio.com",
+    "project_id": "yanggang-4811c",
+    "storage_bucket": "yanggang-4811c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111835722541:android:d8751c5cca5d48f14399a4",
+        "android_client_info": {
+          "package_name": "com.swerd.yanggang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111835722541-vr48iduv40uuilrpa8rml5gipvhhmfir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqVTng6pSWkO4bUtqRlYe4NY37iiRdaLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111835722541-vr48iduv40uuilrpa8rml5gipvhhmfir.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "111835722541-470fjv6g3inpi5oi33ql7m2294dnnujv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.swerd.yanggang"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

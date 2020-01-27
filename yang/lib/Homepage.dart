@@ -34,36 +34,63 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
   ];
 
   List<SoundButtonData> allSounds = [
+    //NUMBERS
     SoundButtonData("4th industrial revolution", '4thIndustrialRevolution.mp3'),
-    SoundButtonData("Paths forward", "CreatePathsForward.mp3"),
-    SoundButtonData("Data is the new oil", "DataIsTheNewOil.mp3"),
-    SoundButtonData("DOJ", "DepartmentOfJustice.mp3"),
-    SoundButtonData("Education", "Education.mp3"),
-    SoundButtonData("Boba", "AlmondMilkTeaWithBoba.mp3"),
-    SoundButtonData("Delicious Tofu", "DeliciousLookingTofu.mp3"),
     SoundButtonData("7-Eleven", "GoInto7-11.mp3"),
-    SoundButtonData("Stick Myself", "GonnaStickMyselfOneOfThese.mp3"),
-    SoundButtonData("Really?", "OhReally,That'sNice.mp3"),
-    SoundButtonData("That's For Me", "That'sForMe.mp3"),
-    SoundButtonData("F*ucked", "YouAreGettingF-cked.mp3"),
-    SoundButtonData("Greatest economic transition", "GreatestEconomicTransitionInOurCountriesHistory.mp3"),
+    //A
     SoundButtonData("About me", "IFYouveHeardAnythingAboutMe.mp3"),
+    //B
+    SoundButtonData("Boba", "AlmondMilkTeaWithBoba.mp3"),
+    //C
+    SoundButtonData("Climate change", "ClimateChange.mp3"),
+    //D
+    SoundButtonData("Data is the new oil", "DataIsTheNewOil.mp3"),
+    SoundButtonData("Delicious Tofu", "DeliciousLookingTofu.mp3"),
+    SoundButtonData("DOJ", "DepartmentOfJustice.mp3"),
+    SoundButtonData("Donald Trump", "DonaldTrump.mp3"),
+    //E
+    SoundButtonData("Education", "Education.mp3"),
     SoundButtonData("Entrepreneur", "ImAnEntrupreneur.mp3"),
+    //F
+    SoundButtonData("Friends and allies", "FriendsAndAlliesWithUsInTheMission.mp3"),
+    SoundButtonData("F*ucked", "YouAreGettingF-cked.mp3"),
+    //G
+    SoundButtonData("Greatest economic transition", "GreatestEconomicTransitionInOurCountriesHistory.mp3"),
+    //H
+    //I
     SoundButtonData("Its gonna be AI", "InAFewYearsItsGonnaBeAnAI.mp3"),
+    //J
+    //K
+    //L
+    //M 
     SoundButtonData("M.A.T.H", "M.A.T.H.mp3"),
+    SoundButtonData("Meddling in American elections", "TheDaysOfMeddlingInAmericanElectionsAreOver.mp3"),
     SoundButtonData("My wife", "MyWifeEvelyn.mp3"),
+    //N
     SoundButtonData("NATO", "Nato.mp3"),
+    //O
+    //P
+    SoundButtonData("Paths forward", "CreatePathsForward.mp3"),
     SoundButtonData("Partnerships and alliances", "OuPartnershipsAndAlliances.mp3"),
     SoundButtonData("Payed family leave", "PayedFamilyLeave.mp3"),
+    //Q
+    //R
+    SoundButtonData("Really?", "OhReally,That'sNice.mp3"),
+    //S
+    SoundButtonData("Stick Myself", "GonnaStickMyselfOneOfThese.mp3"),
+    SoundButtonData("Solve those problems", "SolveThoseProblems.mp3"),
+    //T
+    SoundButtonData("That's For Me", "That'sForMe.mp3"),
     SoundButtonData("The American people", "TheAmericanPeople.mp3"),
-    SoundButtonData("Meddling in American elections", "TheDaysOfMeddlingInAmericanElectionsAreOver.mp3"),
     SoundButtonData("The opposite of Trump", "TheOppositeOfDonaldTrump.mp3"),
     SoundButtonData("Things have changed", "ThingsHaveChangedFundamentally.mp3"),
-    SoundButtonData("Climate change", "ClimateChange.mp3"),
-    SoundButtonData("Donald Trump", "DonaldTrump.mp3"),
-    SoundButtonData("Friends and allies", "FriendsAndAlliesWithUsInTheMission.mp3"),
-    SoundButtonData("Solve those problems", "SolveThoseProblems.mp3"),
-    SoundButtonData("War with Iran", "WarWithIran.mp3")
+    //U
+    //V
+    //W
+    SoundButtonData("War with Iran", "WarWithIran.mp3"),
+    //X
+    //Y
+    //Z
   ];
   List<SoundButtonData> randomSounds = [
     SoundButtonData("4th industrial revolution", '4thIndustrialRevolution.mp3'),
@@ -126,6 +153,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
 
   @override
   void initState() {
+    //ANDROID = ca-app-pub-9205671327772145/1300534181
+    //iOS = ca-app-pub-9205671327772145/9689024626
     super.initState();
     myBanner = BannerAd(
       adUnitId: BannerAd.testAdUnitId,
