@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
-  String ourWebsite = "TODO:GETWEBSITE";
+  String ourWebsite = "https://yanggang.page.link/jTpt";
   List shareStrings = [
     "Are you a fan of the #YANGGANG, then checkout #YANGGANG -- ",
     "Bro do you like Andrew Yang and making sounds, then you'll love #YANGGANG -- ",
@@ -175,7 +175,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
     );
 
     myBanner..load()..show(
-      anchorOffset: 0.0,
+      anchorOffset: 20.0,
       horizontalCenterOffset: 0.0,
       anchorType: AnchorType.bottom,
     );
@@ -253,20 +253,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                   buildSoundGridView(randomSounds)
                 ],
               ),
-              Positioned(
-                bottom: 95,
-                right: 20,
-                child: FloatingActionButton.extended(
-                  backgroundColor: Colors.redAccent[400],
-                  label: Text("Play random"),
-                  icon: Icon(Mdi.play),
-                  onPressed: (){
-                    Random random = new Random(DateTime.now().microsecond);
-                    int newRandom = random.nextInt(allSounds.length-1);
-                    SoundPlayerUtil.addSoundName(allSounds[newRandom].soundName);
-                  },
-                ),
-              )
+              // Positioned(
+              //   bottom: 95,
+              //   right: 20,
+              //   child: FloatingActionButton.extended(
+              //     backgroundColor: Colors.redAccent[400],
+              //     label: Text("Play random"),
+              //     icon: Icon(Mdi.play),
+              //     onPressed: (){
+              //       Random random = new Random(DateTime.now().microsecond);
+              //       int newRandom = random.nextInt(allSounds.length-1);
+              //       SoundPlayerUtil.addSoundName(allSounds[newRandom].soundName);
+              //     },
+              //   ),
+              //)
             ],
           ),
         ),
