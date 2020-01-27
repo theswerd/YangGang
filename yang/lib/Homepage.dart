@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 import 'package:share/share.dart';
 import 'package:rate_my_app/rate_my_app.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -156,9 +157,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
   void initState() {
     //ANDROID = ca-app-pub-9205671327772145/1300534181
     //iOS = ca-app-pub-9205671327772145/9689024626
+    String iOS = "ca-app-pub-9205671327772145/9689024626";
     super.initState();
     myBanner = BannerAd(
-      adUnitId: BannerAd.testAdUnitId,
+      adUnitId: iOS,
       size: AdSize.smartBanner,
       targetingInfo: targetingInfo,
       listener: (MobileAdEvent event) {
@@ -199,12 +201,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                     applicationVersion: '1.0.0',
                     applicationLegalese: "#YANGGANG is not affiliated with The Andrew Yang Campaign. It is developed by high school students Benjamin Swerdlow and Jason Telanoff, all ad profits go to them."
                   );
+                }else if(v == "donate"){
+                  launch("https://www.yang2020.com");
                 }
 
               },
               itemBuilder: (i)=>[
                 PopupMenuItem(
                   child: Text("Donate to Yang"),
+                  value: 'donate',
                 ),
                 PopupMenuItem(
                   child: Text("Share"),
@@ -336,10 +341,10 @@ class SoundPlayerUtil {
 void rating(BuildContext context) {
   RateMyApp rateMyApp = RateMyApp(
     preferencesPrefix: 'rateMyApp_',
-    minDays: 0,
-    minLaunches: 0,
-    remindDays: 0,
-    remindLaunches: 0,
+    minDays: 2,
+    minLaunches: 5,
+    remindDays: 2,
+    remindLaunches: 2,
     googlePlayIdentifier: '',
     appStoreIdentifier: '',
   );
