@@ -208,7 +208,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
               },
               itemBuilder: (i)=>[
                 PopupMenuItem(
-                  child: Text("Donate to Yang"),
+                  child: Text("See Yang's Campaign Website"),
                   value: 'donate',
                 ),
                 PopupMenuItem(
